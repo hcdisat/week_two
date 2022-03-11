@@ -23,9 +23,18 @@ object EventsRepository {
         return events
     }
 
-    fun add(context: Context, event: Event) {
-        val sharePreferenceDriver = SharePreferenceDriver(context)
+    fun add(context: Context, event: Event, index: Int = -1) {
         events.add(event)
+        write(context, event)
+    }
+
+    fun remove(context: Context, event: Event) {
+        events.remove(event)
+        write(context, event)
+    }
+
+    private fun write(context: Context, event: Event) {
+        val sharePreferenceDriver = SharePreferenceDriver(context)
         sharePreferenceDriver.write(events)
     }
 }

@@ -53,7 +53,7 @@ class EventViewHolder(
     fun bind(event: Event) {
         title.text = event.title
         category.text = event.category
-        date.text = event.date
+        date.text = event.dateString
 
         itemView.setOnClickListener {
             eventClick(event)

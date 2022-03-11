@@ -1,14 +1,18 @@
 package com.hcdisat.week_two.views
 
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import com.hcdisat.week_two.ARG_EVENT
 import com.hcdisat.week_two.R
 import com.hcdisat.week_two.databinding.FragmentThridBinding
 import com.hcdisat.week_two.models.Event
+import com.hcdisat.week_two.repositories.EventsRepository
 import java.util.*
 
 /**
@@ -54,8 +58,22 @@ class ThirdFragment : Fragment() {
         event.apply {
             binding.eventTitleDesc.text = event.title
             binding.eventCatDesc.text = event.category
-            binding.eventDateDesc.text = event.date
+            binding.eventDateDesc.text = event.dateString
             binding.eventDaysLeft.text = getString(R.string.days_left, event.daysLeft.toString())
+        }
+
+        binding.btnDeleteContainer.btnDeleteEvent.setOnClickListener {
+
+            AlertDialog.Builder(requireContext())
+                .setTitle(getString(R.string.error_title))
+                .setMessage(getString(R.string.dialog_message))
+                .setPositiveButton("DELETE",
+                ) { _: DialogInterface, _: Int ->
+                    EventsRepository.remove(requireContext(), event)
+                    findNavController().navigate(R.id.action_thridFragment_to_FirstFragment)
+                }.setNegativeButton("CANCEL") {dialogInterface: DialogInterface, _: Int ->
+                    dialogInterface.cancel()
+                }.show()
         }
 
         Calendar.getInstance().apply {

@@ -29,3 +29,22 @@ fun calculateDaysToEvent(event: Event): Long {
 
     return if (diff < 0) 0 else diff
 }
+
+object CalendarUtils {
+
+    private fun isSamePartOfDate(
+        yearA: Calendar,
+        yearB: Calendar, part: Int) : Boolean  = yearA.get(part) == yearB.get(part)
+
+    fun isSameYear(calendarYearA: Calendar, calendarYearB: Calendar): Boolean {
+        return isSamePartOfDate(calendarYearA, calendarYearB, Calendar.YEAR)
+    }
+
+    fun isSameMonth(calendarYearA: Calendar, calendarYearB: Calendar): Boolean {
+        return isSamePartOfDate(calendarYearA, calendarYearB, Calendar.MONTH)
+    }
+
+    fun isSameDay(calendarYearA: Calendar, calendarYearB: Calendar): Boolean {
+        return isSamePartOfDate(calendarYearA, calendarYearB, Calendar.DAY_OF_MONTH)
+    }
+}

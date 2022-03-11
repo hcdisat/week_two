@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn_delete_event"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginBottom="32dp"
+    android:backgroundTint="#D13131"
+    android:text="@string/event_delete_btn"
+    app:drawableEndCompat="@drawable/ic_delete"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    tools:showIn="@layout/fragment_thrid" />

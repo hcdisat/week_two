@@ -14,4 +14,11 @@
     <string name="event_cat">EVENT CAT</string>
     <string name="_25_days_left">25 DAYS LEFT</string>
     <string name="days_left">%s DAYS LEFT</string>
+    <string name="event_delete_btn">Delete</string>
+    <string name="error_title">Are you sure?</string>
+    <string name="dialog_message">This action cannot be undone.</string>
+
+    <string name="event_notification_name">Your event is starting soon!</string>
+    <string name="event_notification_title">Event: %s is starting soon</string>
+    <string name="event_notification_body">Event: %s\nCategory: %s</string>
 </resources>

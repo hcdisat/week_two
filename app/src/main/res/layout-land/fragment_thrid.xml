@@ -19,13 +19,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:backgroundTint="@android:color/darker_gray"
             android:elevation="10dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/event_days_left"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -75,7 +75,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/event_title_desc"
             app:layout_constraintTop_toBottomOf="@+id/event_title_desc"
-            app:layout_constraintVertical_bias="0.287" />
+            app:layout_constraintVertical_bias="0.243" />
 
         <TextView
             android:id="@+id/event_days_left"
@@ -101,6 +101,16 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_days_left" />
+
+        <include
+            android:id="@+id/btn_delete_container"
+            layout="@layout/event_delete_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/event_cat_desc"
+            app:layout_constraintStart_toStartOf="@+id/event_cat_desc"
+            app:layout_constraintTop_toBottomOf="@+id/event_cat_desc" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"

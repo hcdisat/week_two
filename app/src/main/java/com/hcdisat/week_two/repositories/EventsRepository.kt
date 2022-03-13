@@ -14,7 +14,7 @@ object EventsRepository {
 
     fun all(context: Context): List<Event> {
         val sharePreferenceDriver = SharePreferenceDriver(context)
-        val eventsString : String? = sharePreferenceDriver.read()
+        val eventsString = sharePreferenceDriver.read()
 
         eventsString?.let {
             events = gson.fromJson(it, object : TypeToken<List<Event?>?>() {}.type)
@@ -23,6 +23,7 @@ object EventsRepository {
         return events
     }
 
+    // Remember to remove unused parameter, variables, methods and commented code
     fun add(context: Context, event: Event, index: Int = -1) {
         events.add(event)
         write(context, event)
@@ -33,6 +34,7 @@ object EventsRepository {
         write(context, event)
     }
 
+    // Remember to remove unused parameter, variables, methods and commented code
     private fun write(context: Context, event: Event) {
         val sharePreferenceDriver = SharePreferenceDriver(context)
         sharePreferenceDriver.write(events)

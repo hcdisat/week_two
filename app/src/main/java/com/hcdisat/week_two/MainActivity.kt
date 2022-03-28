@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
         getSystemService(Context.ALARM_SERVICE) as AlarmManager
     }
 
+    /**
+     * Great you started using navigation, instead of the supportFragmentManager
+     *
+     * That's the way to go
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

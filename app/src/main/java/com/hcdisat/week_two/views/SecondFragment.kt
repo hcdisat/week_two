@@ -20,6 +20,8 @@ import java.util.*
  */
 class SecondFragment : Fragment() {
 
+    // This is another way to have the viewBinding
+    // nullable variable to have full control of it
     private var _binding: FragmentSecondBinding? = null
 
     // This property is only valid between onCreateView and
